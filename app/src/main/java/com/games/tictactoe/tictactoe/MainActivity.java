@@ -310,4 +310,17 @@ public class MainActivity extends Activity implements View.OnClickListener {
             image.setClickable(clickable);
         }
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mBackgroundMusic.stop();
+    }
+
+   @Override
+    protected void onResume() {
+        mBackgroundMusic.setLooping(true);
+        mBackgroundMusic.start();
+       super.onResume();
+    }
 }
