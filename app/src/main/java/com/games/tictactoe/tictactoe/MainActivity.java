@@ -4,13 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.AppCompatSeekBar;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
@@ -31,6 +29,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     final int CIRCLE_CHOSE = 11;
     final int CROSS_WON_MATCH = 1;
     final int CIRCLE_WON_MATCH = 0;
+    final int NO_ONE_WON_MATCH = -1;
     final int GAME_END_WITH_TIE = 2;
 
     private boolean isAnyoneWon = false;
@@ -66,12 +65,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Random mRandom = new Random();
     private ArrayList<ImageView> mButtonsImages = new ArrayList<>();
 
+    SharedPreferences mSharedPref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         setContentView(R.layout.main_layout);
 
+        mSharedPref = getPreferences(Context.MODE_PRIVATE);
         mBackgroundMusic = MediaPlayer.create(this, R.raw.game_music);
 
         initVolumeSeekBar();
@@ -118,6 +120,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         mCircleScore = (TextView) findViewById(R.id.circle_score);
         mCrossScore = (TextView) findViewById(R.id.cross_score);
+
+        ((TextView)findViewById(R.id.circle_legacy_score)).setText(String.valueOf(mSharedPref.getInt(CIRCLE_WON, 0)));
+        ((TextView)findViewById(R.id.cross_legacy_score)).setText(String.valueOf(mSharedPref.getInt(CROSS_WON, 0)));
 
         mImage1.setOnClickListener(this);
         mImage2.setOnClickListener(this);
@@ -228,13 +233,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     }
 
-    private void openFinishDialog(String winnerText, final int winner) {
+    private void openFinishDialog(final String winnerText, final int winner) {
         isAnyoneWon = true;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(winnerText)
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        int value = mSharedPref.getInt(winnerText, 0);
+                        mSharedPref.edit().putInt(winnerText, value  + 1).apply();
                         resetTheGame(winner);
                         dialog.dismiss();
                     }
@@ -319,8 +326,34 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
    @Override
     protected void onResume() {
-        mBackgroundMusic.setLooping(true);
-        mBackgroundMusic.start();
+       mBackgroundMusic = MediaPlayer.create(this, R.raw.game_music);
+       mBackgroundMusic.start();
        super.onResume();
+    }
+
+    @Override
+    public void onBackPressed() {
+        new ExitGameDialog.Builder()
+                .addBackToMenuButton(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(MainActivity.this, PreMainActivity.class);
+                        startActivity(i);
+                        finish();
+                    }
+                })
+                .addQuitGameButton(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                })
+                .addResetMatchButton(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        resetTheGame(NO_ONE_WON_MATCH);
+                    }
+                })
+                .show(MainActivity.this);
     }
 }

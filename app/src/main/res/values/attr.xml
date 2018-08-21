@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="XView">
+        <attr name="x_color" format="color"/>
+        <attr name="x_stroke_width" format="float"/>
+    </declare-styleable>
+</resources>
