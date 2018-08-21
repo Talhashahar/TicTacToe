@@ -39,9 +39,10 @@ public class PreMainActivity extends Activity {
             public void onClick(View v) {
 
                 new TicTacToeDialog.Builder()
-                .addTitle("about app")
-                .addData("aslkk asdlkj asd laksd asdlkjas dlaksdj asd alksdj asldk aslkdj aslkdj")
-                .show(PreMainActivity.this);
+                        .clearData()
+                        .addTitle("about app")
+                        .addData("The application developed for Shenkar College. \nCourse Andorid.\nThe application developed by Tal Hashahar, Avi Levi and Tal Chausho Gur-arie.")
+                        .show(PreMainActivity.this);
             }
         });
 
@@ -49,8 +50,9 @@ public class PreMainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 new TicTacToeDialog.Builder()
+                        .clearData()
                         .addTitle("how to play")
-                        .addData("aslkk asdlkj asd laksd asdlkjas dlaksdj asd alksdj asldk aslkdj aslkdj")
+                        .addData("In our game have two modes. \nFirst is play against the 'Machine' and second is play vs friend. \nIf you are X player you must put three X in Row or Colum or Slant for win the match, after the match ended the board will reset and the match start again. ")
                         .show(PreMainActivity.this);
             }
         });

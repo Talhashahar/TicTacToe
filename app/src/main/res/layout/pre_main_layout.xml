@@ -73,7 +73,7 @@
         android:id="@+id/producers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Made by: Tal and Avi"
+        android:text="Made by: Tal and Avi and Tal"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"/>

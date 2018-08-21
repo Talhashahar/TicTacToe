@@ -82,6 +82,11 @@ public class TicTacToeDialog extends Dialog {
             return this;
         }
 
+        public Builder clearData() {
+            dataString = "";
+            return this;
+        }
+
         public void show(Context context) {
             TicTacToeDialog dialog = new TicTacToeDialog(context);
             dialog.setData(dataString);
