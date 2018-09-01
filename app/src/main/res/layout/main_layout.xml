@@ -79,100 +79,178 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <ImageView
-                    android:id="@+id/image1"
+                <FrameLayout
                     android:layout_width="10dp"
                     android:layout_height="100dp"
-                    android:layout_margin="1dp"
                     android:background="#ffffff"
                     android:padding="5dp"
-                    android:tag="147"
-                    android:gravity="center"/>
+                    android:layout_margin="1dp">
+                    <ImageView
+                        android:id="@+id/image1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tag="147"
+                        android:scaleX="0"
+                        android:scaleY="0"
+                        android:alpha="0"
+                        android:gravity="center"/>
+                </FrameLayout>
 
-                <ImageView
-                    android:id="@+id/image2"
+                <FrameLayout
                     android:layout_width="10dp"
                     android:layout_height="100dp"
-                    android:layout_margin="1dp"
                     android:background="#ffffff"
                     android:padding="5dp"
-                    android:tag="15"
-                    android:gravity="center"/>
-                <ImageView
-                    android:id="@+id/image3"
+                    android:layout_margin="1dp">
+                    <ImageView
+                        android:id="@+id/image2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#ffffff"
+                        android:tag="15"
+                        android:scaleX="0"
+                        android:scaleY="0"
+                        android:alpha="0"
+                        android:gravity="center"/>
+                </FrameLayout>
+
+                <FrameLayout
                     android:layout_width="10dp"
                     android:layout_height="100dp"
-                    android:layout_margin="1dp"
                     android:background="#ffffff"
                     android:padding="5dp"
-                    android:tag="168"
-                    android:gravity="center"/>
+                    android:layout_margin="1dp">
+                    <ImageView
+                        android:id="@+id/image3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#ffffff"
+                        android:tag="168"
+                        android:scaleX="0"
+                        android:scaleY="0"
+                        android:alpha="0"
+                        android:gravity="center"/>
+                </FrameLayout>
+
+
+
+
             </TableRow>
 
             <TableRow
                 android:background="#000000"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/image4"
+
+                <FrameLayout
                     android:layout_width="10dp"
                     android:layout_height="100dp"
-                    android:layout_margin="1dp"
                     android:background="#ffffff"
                     android:padding="5dp"
-                    android:tag="24"
-                    android:gravity="center"/>
-                <ImageView
-                    android:id="@+id/image5"
+                    android:layout_margin="1dp">
+                    <ImageView
+                        android:id="@+id/image4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tag="24"
+                        android:scaleX="0"
+                        android:scaleY="0"
+                        android:alpha="0"
+                        android:gravity="center"/>
+                </FrameLayout>
+
+                <FrameLayout
                     android:layout_width="10dp"
                     android:layout_height="100dp"
-                    android:layout_margin="1dp"
                     android:background="#ffffff"
                     android:padding="5dp"
-                    android:tag="2578"
-                    android:gravity="center"/>
-                <ImageView
-                    android:id="@+id/image6"
+                    android:layout_margin="1dp">
+                    <ImageView
+                        android:id="@+id/image5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tag="2578"
+                        android:scaleX="0"
+                        android:scaleY="0"
+                        android:alpha="0"
+                        android:gravity="center"/>
+                </FrameLayout>
+
+                <FrameLayout
                     android:layout_width="10dp"
                     android:layout_height="100dp"
-                    android:layout_margin="1dp"
                     android:background="#ffffff"
                     android:padding="5dp"
-                    android:tag="26"
-                    android:gravity="center"/>
+                    android:layout_margin="1dp">
+                    <ImageView
+                        android:id="@+id/image6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tag="26"
+                        android:scaleX="0"
+                        android:scaleY="0"
+                        android:alpha="0"
+                        android:gravity="center"/>
+                </FrameLayout>
+
             </TableRow>
 
             <TableRow
                 android:background="#000000"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/image7"
+
+                <FrameLayout
                     android:layout_width="10dp"
                     android:layout_height="100dp"
-                    android:layout_margin="1dp"
                     android:background="#ffffff"
-                    android:gravity="center"
                     android:padding="5dp"
-                    android:tag="348"/>
-                <ImageView
-                    android:id="@+id/image8"
+                    android:layout_margin="1dp">
+                    <ImageView
+                        android:id="@+id/image7"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tag="348"
+                        android:scaleX="0"
+                        android:scaleY="0"
+                        android:alpha="0"
+                        android:gravity="center"/>
+                </FrameLayout>
+
+                <FrameLayout
                     android:layout_width="10dp"
                     android:layout_height="100dp"
-                    android:layout_margin="1dp"
                     android:background="#ffffff"
-                    android:gravity="center"
                     android:padding="5dp"
-                    android:tag="35" />
-                <ImageView
-                    android:id="@+id/image9"
+                    android:layout_margin="1dp">
+                    <ImageView
+                        android:id="@+id/image8"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tag="35"
+                        android:scaleX="0"
+                        android:scaleY="0"
+                        android:alpha="0"
+                        android:gravity="center"/>
+                </FrameLayout>
+
+                <FrameLayout
                     android:layout_width="10dp"
                     android:layout_height="100dp"
-                    android:layout_margin="1dp"
                     android:background="#ffffff"
-                    android:gravity="center"
                     android:padding="5dp"
-                    android:tag="367"/>
+                    android:layout_margin="1dp">
+                    <ImageView
+                        android:id="@+id/image9"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tag="367"
+                        android:scaleX="0"
+                        android:scaleY="0"
+                        android:alpha="0"
+                        android:gravity="center"/>
+                </FrameLayout>
+
             </TableRow>
 
         </TableLayout>

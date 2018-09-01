@@ -203,11 +203,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private void playNowTurn(View v) {
         if (mNowTurn == 1) {
             ((ImageView) v).setImageDrawable(getDrawable(R.drawable.x));
+            ((ImageView) v).animate().scaleX(1).scaleY(1).rotation(180).setDuration(400).alpha(1).start();
             mNowTurnImage.setImageDrawable(getDrawable(R.drawable.o));
             isAnyPlayerWin(v);
             mNowTurn = 0;
         } else {
             ((ImageView) v).setImageDrawable(getDrawable(R.drawable.o));
+            ((ImageView) v).animate().scaleX(1).scaleY(1).rotation(180).setDuration(400).alpha(1).start();
             mNowTurnImage.setImageDrawable(getDrawable(R.drawable.x));
             isAnyPlayerWin(v);
             mNowTurn = 1;
@@ -247,10 +249,58 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         mSharedPref.edit().putInt(winnerText, value  + 1).apply();
                         resetTheGame(winner);
                         dialog.dismiss();
+                        clearAnimations();
                     }
                 });
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    private void clearAnimations() {
+        mImage1.setScaleX(0f);
+        mImage1.setScaleY(0f);
+        mImage1.setAlpha(0f);
+        mImage1.setRotation(0);
+
+        mImage2.setScaleX(0f);
+        mImage2.setScaleY(0f);
+        mImage2.setAlpha(0f);
+        mImage2.setRotation(0);
+
+        mImage3.setScaleX(0f);
+        mImage3.setScaleY(0f);
+        mImage3.setAlpha(0f);
+        mImage3.setRotation(0);
+
+        mImage4.setScaleX(0f);
+        mImage4.setScaleY(0f);
+        mImage4.setAlpha(0f);
+        mImage4.setRotation(0);
+
+        mImage5.setScaleX(0f);
+        mImage5.setScaleY(0f);
+        mImage5.setAlpha(0f);
+        mImage5.setRotation(0);
+
+        mImage6.setScaleX(0f);
+        mImage6.setScaleY(0f);
+        mImage6.setAlpha(0f);
+        mImage6.setRotation(0);
+
+        mImage7.setScaleX(0f);
+        mImage7.setScaleY(0f);
+        mImage7.setAlpha(0f);
+        mImage7.setRotation(0);
+
+        mImage8.setScaleX(0f);
+        mImage8.setScaleY(0f);
+        mImage8.setAlpha(0f);
+        mImage8.setRotation(0);
+
+        mImage9.setScaleX(0f);
+        mImage9.setScaleY(0f);
+        mImage9.setAlpha(0f);
+        mImage9.setRotation(0);
     }
 
     private void computerPlay() {
